@@ -1,0 +1,175 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* ### Primary */
+  --Moderate-violet: hsl(263, 55%, 52%);
+  --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --Very-dark-blackish-blue: hsl(219, 29%, 14%);
+  --White: hsl(0, 0%, 100%);
+  /* ### Neutral */
+  --Light-gray: hsl(0, 0%, 81%);
+  --Light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+body {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  background-color: var(--Light-grayish-blue);
+}
+
+main {
+  width: 90%;
+  margin: 30px auto;
+  border-radius: 10px;
+}
+
+main section {
+  padding: 25px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+main section h4 {
+  padding: 20px 0;
+  color: var(--White);
+  line-height: 22px;
+  font-size: 20px;
+}
+
+main section p {
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--Light-gray);
+  opacity: 0.7;
+}
+
+main section img {
+  border-radius: 50%;
+  border: 1px solid var(--White);
+  width: 30px;
+}
+
+/*Verified Graduate */
+main section::before {
+  content: "Daniel Clifford";
+  position: absolute;
+  font-size: 13px;
+  top: 27px;
+  left: 75px;
+  width: 90px;
+  color: var(--White);
+}
+
+main section::after {
+  content: "Verified Graduate";
+  position: absolute;
+  font-size: 11px;
+  top: 44px;
+  left: 75px;
+  width: 90px;
+  color: var(--White);
+  opacity: 0.5;
+}
+
+/* Section 1 */
+main section:nth-of-type(1) {
+  background: var(--Moderate-violet) url(images/bg-pattern-quotation.svg)
+    no-repeat right 20px top;
+}
+
+/* Section 2 */
+main section:nth-of-type(2) {
+  background-color: var(--Very-dark-grayish-blue);
+}
+
+main section:nth-of-type(2)::before {
+  content: "Jonathan Walters";
+}
+
+/* Section 3 */
+main section:nth-of-type(3),
+main section:nth-of-type(5) {
+  background-color: var(--White);
+}
+
+main section:nth-of-type(3) h4,
+main section:nth-of-type(5) h4 {
+  color: black;
+}
+
+main section:nth-of-type(3) p,
+main section:nth-of-type(5) p {
+  color: black;
+}
+
+main section:nth-of-type(3)::before {
+  content: "Jeanette Harmon";
+  color: black;
+}
+
+main section:nth-of-type(3)::after,
+main section:nth-of-type(5)::after {
+  color: black;
+}
+
+/* Section 4 */
+main section:nth-of-type(4) {
+  background-color: var(--Very-dark-blackish-blue);
+}
+
+main section:nth-of-type(4)::before {
+  content: "Patrick Abrams";
+}
+
+/* Section 5 */
+main section:nth-of-type(5)::before {
+  content: "Kira Whittle";
+  color: black;
+}
+
+@media screen and (min-width: 1000px) {
+  main {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+      "one one two five"
+      "three four four five";
+    gap: 20px;
+  }
+
+  main section {
+    margin-bottom: 0;
+  }
+
+  main section:nth-of-type(1) {
+    grid-area: one;
+  }
+
+  main section:nth-of-type(2) {
+    grid-area: two;
+  }
+
+  main section:nth-of-type(3) {
+    grid-area: three;
+  }
+
+  main section:nth-of-type(4) {
+    grid-area: four;
+  }
+
+  main section:nth-of-type(5) {
+    grid-area: five;
+  }
+}
+
+@media screen and (min-width: 1285px) {
+  main {
+    width: 1265px;
+  }
+}
